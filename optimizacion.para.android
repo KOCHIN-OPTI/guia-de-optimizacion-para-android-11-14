@@ -1,0 +1,88 @@
+Limpia la caché de Google Play Services:Qué hacer: Ajustes > Aplicaciones > Servicios de Google Play > Almacenamiento > Borrar caché.
+    Resultado: Evita que los servicios en la nube consuman ciclos de CPU de forma innecesaria en segundo plano.
+
+puedes usar ADB APPCONTROL para eliminar el bloatware del dispositivo android
+si es motorola recomiendo esto
+
+(Moto App Manager): ❌ Eliminar. Es el responsable de instalar aplicaciones basura de fondo.
+com.motorola.ccc.notification (Moto Notifications): ❌ Eliminar. Envía notificaciones de publicidad y sugerencias molestas del fabricante.
+com.motorola.smartfeed (Smart Feed / Moto Hub): ❌ Eliminar. La pantalla de noticias que aparece a la izquierda del inicio; consume mucha RAM en segundo plano.
+com.taboola.android.reskin... (Live Lock Screen / Taboola): ❌ Eliminar. Una central de anuncios disfrazada que pone publicidad directa en tu pantalla de bloqueo.
+com.motorola.motoai (Moto AI): ❌ Eliminar (si no usas sus funciones inteligentes). Gasta procesamiento ejecutando algoritmos de fondo.
+y la app de juegos de motorola,radio,etc cualquier cosas que no usen no toque cualquier cosa pueden preguntar a gemini que eliminar o que no eliminar.
+
+NO actives "Forzar MSAA 4x": Esto mejorará los bordes de los gráficos, pero destruirá por completo tus FPS y calentará el teléfono en exceso.
+
+NO actives "Forzar renderización GPU": En versiones modernas de Android esto ya viene optimizado de fábrica y forzarlo manualmente puede generar inestabilidad.
+
+Preferencias del controlador gráfico (Driver gráfico):
+Qué hacer: Busca tu juego en la lista y cambia de "Predeterminado" a "Controlador gráfico del sistema" (System Graphics Driver).
+Resultado: Obliga al teléfono a usar el driver más optimizado de la GPU para ese juego.
+
+aunque algunas veces suene no ver cambios los juegos recomendaria que pruebe con el controlador grafico del sistema y despues lo prueban con el controlador grafico. para ver que diferencia minima de rendimiento que tenga el dispositivo.
+
+
+Tamaño del búfer de logger
+lo ideal es dejarlo entre "64 kb o desactivado". pero porque?
+
+Libera memoria RAM instantáneamente: El búfer de logger reserva un espacio continuo en tus 4 GB de RAM para guardar un historial de textos sobre lo que hace el sistema. Si lo desactivas o lo dejas en 64 KB, esa memoria se entrega directo a tus juegos.
+
+Evita los tirones en juegos en línea: Cuando juegas títulos competitivos, un búfer de logger grande satura la cola de procesos de la CPU anotando datos de conexión, lo que genera micro-parones (stuttering).
+
+
+Tamaño del buffer por CPU
+8192 KB (Recomendado): Es el valor más liviano disponible en tu menú. Reduce el consumo innecesario de recursos y ayuda a mantener la estabilidad de los fotogramas por segundo (FPS).
+
+16384 KB / 32768 KB / 65536 KB (Evitarlos): No mejoran el rendimiento ni la velocidad gráfica. Al contrario, amplían la cantidad de memoria reservada para los registros del sistema (logd), lo que puede generar tirones (stuttering) o cierres repentinos en juegos demandantes debido a los límites de tus 4 GB de RAM.
+
+tener el desmarcado
+    registrar seguimiento
+    grabar el generador de perfiles de cpu
+    registro aplicaciones
+    registro largos
+    detener registros de informes de errores
+    mostrar el mosaico de ajuste rapidos
+
+desmarcar todo las categorias que sale en registro del sistema
+adb: ADB
+aidi: AIDL calls
+am: Activity Manager
+audio: audio
+binder_driver: Binder kernel driver
+binder_lock: Binder global lock trace
+bionic: bionic C library
+camera: camera
+cpu: callstack samples
+dalvik: Dalvik VM
+database: database
+disk: Disk i/o
+freq: CPU Frequency
+gfx: Graphics
+hal: hardware modules
+idle: CPU idle
+input: input
+irq: IRQ events
+logs: Android Logcat
+memory: memory
+memreclaim: kernel memory reclaim
+network: network
+nnapi: NNAPI
+pdx: PDX services
+pm: package manager
+power: power management
+res: Resource loading
+rro: Runtime Resourse overlay
+rs: RenderScript
+sched: CPU Scheduling
+sm: Sync Manager
+ss: System Server
+sync: synchronization
+sys_stats: meminfo and vmstats
+thermal: Thermal event
+vibrator: Vibrator
+video: video
+view: View System
+webview: webview
+vm: windows manager
+
+
